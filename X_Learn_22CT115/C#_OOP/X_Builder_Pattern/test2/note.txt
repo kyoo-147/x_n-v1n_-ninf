@@ -1,0 +1,94 @@
+Mã nguồn mà bạn đã chia sẻ trông giống như một ví dụ cụ thể của mô hình thiết kế "Builder Pattern". Dưới đây là mô tả ngắn về từng phần của mã nguồn:
+
+1. **`IBuilder` (Builder Interface):**
+   - Định nghĩa các phương thức để xây dựng các phần khác nhau của đối tượng sản phẩm.
+
+2. **`ConcreteBuilder` (Concrete Builder):**
+   - Triển khai `IBuilder` và cung cấp triển khai cụ thể của từng bước xây dựng.
+   - Đối tượng này giữ một đối tượng `Product` và xây dựng nó bước từ bước.
+
+3. **`Product`:**
+   - Đối tượng cuối cùng cần được xây dựng.
+   - Cung cấp các phương thức để thêm các phần vào đối tượng và mô tả chúng.
+
+4. **`Director`:**
+   - Chịu trách nhiệm thực hiện các bước xây dựng theo một trình tự cụ thể.
+   - Cho phép Client kiểm soát quá trình xây dựng thông qua việc thiết lập Builder cụ thể.
+
+5. **`Program` (Main):**
+   - Client code sử dụng `Director` và `ConcreteBuilder` để xây dựng các sản phẩm khác nhau.
+   - Hiển thị kết quả của quá trình xây dựng.
+
+Mô hình Builder Pattern thường được sử dụng khi muốn xây dựng một đối tượng phức tạp bước từ bước mà không làm cho client code phức tạp. 
+Trong ví dụ này, `Director` chịu trách nhiệm thiết lập quy trình xây dựng, trong khi `ConcreteBuilder` thực hiện các bước cụ thể. 
+`Product` là đối tượng cuối cùng được xây dựng từ các phần khác nhau.
+
+
+1. Giới Thiệu Builder Pattern:
+Builder Pattern là một mô hình thiết kế thuộc nhóm Creational Patterns, được sử dụng khi muốn tạo ra một đối tượng phức tạp có nhiều phần khác nhau và có thể được xây dựng theo nhiều cách.
+
+2. Ví Dụ: Xây Dựng Sản Phẩm (Product) với Builder Pattern:
+Trong ví dụ này, chúng ta sẽ tạo một đối tượng Product (Sản phẩm) có nhiều phần khác nhau như "GPT", "GPT-1", và "GPT-2".
+
+
+
+
+3. Các Phần Chính:
+
+- Builder Interface (IBuilder):
+Định nghĩa các phương thức cần thiết để xây dựng các phần khác nhau của đối tượng Product.
+
+- Concrete Builder (ConcreteBuilder):
+Triển khai giao diện IBuilder.
+Cung cấp các triển khai cụ thể cho từng bước xây dựng phần của đối tượng Product.
+Có một đối tượng Product để xây dựng.
+
+- Product:
+Đối tượng cần được xây dựng.
+Có nhiều phần khác nhau được thêm vào.
+
+- Director:
+Chịu trách nhiệm thực hiện các bước xây dựng theo một trình tự cụ thể.
+Sử dụng một đối tượng IBuilder để hướng dẫn quá trình xây dựng.
+
+- Main Program (Program):
+Hàm chính của chương trình.
+Tạo đối tượng Director và ConcreteBuilder.
+Gán ConcreteBuilder cho Director.
+Sử dụng Director để xây dựng các đối tượng Product và hiển thị thông tin về chúng.
+
+
+
+4. Luồng Xử Lý:
+
+Bước 1: Khởi Tạo và Gán Builder:
+Tạo một đối tượng Director.
+Tạo một đối tượng ConcreteBuilder.
+Gán ConcreteBuilder cho Director.
+
+Bước 2: Xây Dựng Sản Phẩm Cơ Bản:
+Sử dụng Director để xây dựng sản phẩm cơ bản tiêu chuẩn.
+Hiển thị thông tin về sản phẩm đã xây dựng.
+
+Bước 3: Xây Dựng Sản Phẩm Đầy Đủ Tính Năng:
+Sử dụng Director để xây dựng sản phẩm đầy đủ tính năng.
+Hiển thị thông tin về sản phẩm đã xây dựng.
+
+Bước 4: Xây Dựng Sản Phẩm Tùy Chỉnh:
+Sử dụng ConcreteBuilder trực tiếp để xây dựng một sản phẩm tùy chỉnh.
+Hiển thị thông tin về sản phẩm tùy chỉnh đã xây dựng.
+
+
+
+
+
+
+
+
+
+
+
+
+5. Kết Luận:
+Builder Pattern giúp chúng ta tách rời quá trình xây dựng đối tượng khỏi biểu diễn cụ thể của đối tượng, tạo ra sự linh hoạt và dễ mở rộng trong việc xây dựng đối tượng phức tạp.
+Cách tiếp cận này giúp giảm sự phức tạp của việc xây dựng và biểu diễn đối tượng, đồng thời cung cấp kiểm soát tối đa cho việc tạo ra các biến thể của đối tượng Product.
